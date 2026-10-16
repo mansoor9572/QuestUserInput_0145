@@ -35,14 +35,20 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
         ) {
         OutlinedTextField(
             value = textNama,
-            onValueChange = { textNama = it },
-            singleLine = true
-        )
-    ) {
-        OutlinedTextField(
-            value = textNama,
-            onValueChange = { textNama = it },
-            singleLine = true
-        )
-    }
+            singleLine = true,
+            shape = MaterialTheme.shapes.large,
+            modifier = Modifier.width(250.dp(),
+           labler = { Text(text = "Nama") },
+                onValueChange = { textNama = it }
+    )
+    Row {
+        gender.forEach { item ->
+            Row(modifier = Modifier.selectable(
+                selected = textJK == item,
+            )
+            }
+
+            }
+            {
+
 }
