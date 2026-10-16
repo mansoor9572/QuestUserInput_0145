@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
@@ -120,16 +121,20 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
 
         ElevatedCard(
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = dimensionResource(id = R.dimen.padding_medium))
+                .height(100.dp)
+                .width(300.dp)
         ) {
             Column(
-                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium))
+                modifier = Modifier.padding(
+                    horizontal = 5.dp,
+                    vertical = 15.dp
+                )
             ) {
-                Text(text = "Nama: $nama")
-                Text(text = "Jenis Kelamin: $jenis")
-                Text(text = "Alamat: $alamat")
+                Text(text = "Nama : " + nama, color = Color.White)
+                Text(text = "Gender : " + jenis, color = Color.White)
+                Text(text = "Alamat : " + alamat, color = Color.White)
             }
         }
     }
